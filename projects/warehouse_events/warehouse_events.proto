@@ -11,8 +11,8 @@ service WarehouseEvents {
 }
 
 message WarehouseEvent {
-  string event_1 = 1;
-  string params_1 = 2;
+  string event = 1;
+  string params = 2;
 }
 
 message Empty {
