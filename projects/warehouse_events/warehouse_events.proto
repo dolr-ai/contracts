@@ -4,7 +4,6 @@ package warehouse_events;
 
 // Interface exported by the server.
 service WarehouseEvents {
-  // A simple RPC.
 
   rpc SendEvent(WarehouseEvent) returns (Empty) {}
 
