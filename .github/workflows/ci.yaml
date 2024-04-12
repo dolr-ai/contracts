@@ -16,11 +16,11 @@ jobs:
       - name: Lint
         uses: bufbuild/buf-lint-action@v1
         with:
-          input: github-actions
+          input: projects
       # Detect breaking changes for the Buf module in the `github-actions` directory
       # against the current `main` branch
       - name: Breaking change detection against `main`
         uses: bufbuild/buf-breaking-action@v1
         with:
-          input: github-actions
-          against: https://github.com/bufbuild/buf-examples.git#branch=main,ref=HEAD~1,subdir=github-actions
+          input: projects
+          against: https://github.com/go-bazzinga/contracts.git#branch=main,ref=HEAD~1,subdir=github-actions
