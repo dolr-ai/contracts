@@ -23,4 +23,4 @@ jobs:
         uses: bufbuild/buf-breaking-action@v1
         with:
           input: projects
-          against: https://github.com/go-bazzinga/contracts.git#branch=main,ref=HEAD~1,subdir=github-actions
+          against: https://github.com/go-bazzinga/contracts.git#branch=main,ref=HEAD~1,subdir=projects
