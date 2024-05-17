@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ml_server;
+
+message VideoEmbedRequest {
+    string video_id = 1;
+}
+
+message VideoEmbedResponse {
+    repeated double result = 1;
+}
+
+service MLServer {
+    rpc predict(VideoEmbedRequest) returns (VideoEmbedResponse) {}
+}
