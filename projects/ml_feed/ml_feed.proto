@@ -3,13 +3,13 @@ syntax = "proto3";
 package ml_feed;
 
 message PostItem {
-  string post_id = 1;
+  uint32 post_id = 1;
   string canister_id = 2;
 }
 
 message FeedRequest {
   repeated PostItem filter_posts = 1;
-  int32 num_results = 2;
+  uint32 num_results = 2;
 }
 
 message FeedResponse { repeated PostItem feed = 1; }
