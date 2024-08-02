@@ -8,8 +8,9 @@ message PostItem {
 }
 
 message FeedRequest {
-  repeated PostItem filter_posts = 1;
-  uint32 num_results = 2;
+  string canister_id = 1;
+  repeated PostItem filter_posts = 2;
+  uint32 num_results = 3;
 }
 
 message FeedResponse { repeated PostItem feed = 1; }
