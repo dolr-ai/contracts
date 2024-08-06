@@ -5,6 +5,7 @@ package ml_feed_py;
 message MLPostItem {
   uint32 post_id = 1;
   string canister_id = 2;
+  string video_id = 3;
 }
 
 message WatchHistoryItem {
