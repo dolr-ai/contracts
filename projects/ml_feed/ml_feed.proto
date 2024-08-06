@@ -8,13 +8,18 @@ message PostItem {
   string video_id = 3;
 }
 
+message PostItemResponse {
+  uint32 post_id = 1;
+  string canister_id = 2;
+}
+
 message FeedRequest {
   string canister_id = 1;
   repeated PostItem filter_posts = 2;
   uint32 num_results = 3;
 }
 
-message FeedResponse { repeated PostItem feed = 1; }
+message FeedResponse { repeated PostItemResponse feed = 1; }
 
 service MLFeed {
   rpc get_feed(FeedRequest) returns (FeedResponse) {}

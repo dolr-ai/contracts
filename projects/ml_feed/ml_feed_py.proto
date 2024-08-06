@@ -8,6 +8,11 @@ message MLPostItem {
   string video_id = 3;
 }
 
+message MLPostItemResponse {
+  uint32 post_id = 1;
+  string canister_id = 2;
+}
+
 message WatchHistoryItem {
   uint32 post_id = 1;
   string canister_id = 2;
@@ -33,7 +38,7 @@ message MLFeedRequest {
   uint32 num_results = 5;
 }
 
-message MLFeedResponse { repeated MLPostItem feed = 1; }
+message MLFeedResponse { repeated MLPostItemResponse feed = 1; }
 
 service MLFeed {
   rpc get_ml_feed(MLFeedRequest) returns (MLFeedResponse) {}
