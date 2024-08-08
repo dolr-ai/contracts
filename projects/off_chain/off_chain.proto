@@ -7,6 +7,7 @@ service OffChain {
 
   rpc ReportPost(ReportPostRequest) returns (Empty) {}
 
+  rpc BindDeviceToPrincipal(BindDeviceToPrincipalRequest) returns (Empty) {}
 }
 
 message ReportPostRequest {
@@ -19,5 +20,9 @@ message ReportPostRequest {
   string video_url = 7;
 }
 
-message Empty {
+message BindDeviceToPrincipalRequest {
+  string device_id = 1;
+  string principal_id = 2;
 }
+
+message Empty {}
