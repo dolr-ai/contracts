@@ -17,6 +17,7 @@ message MLFeedCacheItem {
 
 message UpdateMLFeedCacheRequest {
     repeated MLFeedCacheItem items = 1;
+    string user_canister_id = 2;
 }
 
 message Empty {}
