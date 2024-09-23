@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package icpump_search;
+
+message SearchRequest {
+  string query = 1;
+  uint32 num_results = 2;
+}
+
+message SearchResponse {
+  repeated SearchResponseItem results = 1;
+}
+
+message SearchResponseItem {
+  string user_id = 1;
+  string token_name = 2;
+  string token_symbol = 3;
+  string logo = 4;
+  string description = 5;
+  string created_at = 6;
+  string link = 7;
+}
+
+
+service ICPumpSearch {
+    rpc search(SearchRequest) returns (SearchResponse);
+}
