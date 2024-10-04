@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package icpump_search;
+package search;
 
 service SearchService {
   rpc Search (SearchRequest) returns (SearchResponse) {}
