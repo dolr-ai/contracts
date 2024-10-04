@@ -2,26 +2,27 @@ syntax = "proto3";
 
 package icpump_search;
 
+service SearchService {
+  rpc Search (SearchRequest) returns (SearchResponse) {}
+}
+
 message SearchRequest {
-  string query = 1;
-  uint32 num_results = 2;
+  string input_query = 1;
 }
 
 message SearchResponse {
-  repeated SearchResponseItem results = 1;
+  repeated SearchItem items = 1;
+  string answer = 2;
 }
 
-message SearchResponseItem {
-  string user_id = 1;
-  string token_name = 2;
-  string token_symbol = 3;
-  string logo = 4;
-  string description = 5;
-  string created_at = 6;
-  string link = 7;
-}
-
-
-service ICPumpSearch {
-    rpc search(SearchRequest) returns (SearchResponse);
+message SearchItem {
+  string canister_id = 1;
+  string description = 2;
+  string host = 3;
+  string link = 4;
+  string logo = 5;
+  string token_name = 6;
+  string token_symbol = 7;
+  string user_id = 8;
+  string created_at = 9;
 }
