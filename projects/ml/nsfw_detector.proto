@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package nsfw;
+package nsfw_detector;
 
 message NSFWDetectorRequestVideoId { string video_id = 1; }
 
