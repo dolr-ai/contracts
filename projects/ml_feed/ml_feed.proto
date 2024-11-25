@@ -13,7 +13,6 @@ message PostItemResponse {
   string canister_id = 2;
 }
 
-
 message PostItemResponseV1 {
   uint32 post_id = 1;
   string canister_id = 2;
@@ -32,4 +31,6 @@ message FeedResponseV1 { repeated PostItemResponseV1 feed = 1; }
 service MLFeed {
   rpc get_feed(FeedRequest) returns (FeedResponse) {}
   rpc get_feed_v1(FeedRequest) returns (FeedResponseV1) {}
+  rpc get_feed_clean(FeedRequest) returns (FeedResponseV1) {}
+  rpc get_feed_nsfw(FeedRequest) returns (FeedResponseV1) {}
 }

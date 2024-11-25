@@ -52,4 +52,6 @@ message MLFeedResponseV1 { repeated MLPostItemResponseV1 feed = 1; }
 service MLFeed {
   rpc get_ml_feed(MLFeedRequest) returns (MLFeedResponse) {}
   rpc get_ml_feed_v1(MLFeedRequest) returns (MLFeedResponseV1) {}
+  rpc get_ml_feed_clean(MLFeedRequest) returns (MLFeedResponseV1) {}
+  rpc get_ml_feed_nsfw(MLFeedRequest) returns (MLFeedResponseV1) {}
 }
