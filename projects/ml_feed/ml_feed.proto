@@ -33,4 +33,5 @@ service MLFeed {
   rpc get_feed_v1(FeedRequest) returns (FeedResponseV1) {}
   rpc get_feed_clean(FeedRequest) returns (FeedResponse) {}
   rpc get_feed_nsfw(FeedRequest) returns (FeedResponse) {}
+  rpc get_feed_coldstart(FeedRequest) returns (FeedResponse) {}
 }
