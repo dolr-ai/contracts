@@ -44,6 +44,19 @@ message MLFeedRequest {
   uint32 num_results = 5;
 }
 
+message VideoReportRequest {
+  string reportee_user_id = 1;
+  string reportee_canister_id = 2;
+  string video_canister_id = 3;
+  uint32 video_post_id = 4;
+  string video_id = 5;
+  string reason = 6;
+}
+
+message VideoReportResponse {
+  bool success = 1;
+}
+
 message MLFeedResponse { repeated MLPostItemResponse feed = 1; }
 
 message MLFeedResponseV1 { repeated MLPostItemResponseV1 feed = 1; }
@@ -53,4 +66,5 @@ service MLFeed {
   rpc get_ml_feed_v1(MLFeedRequest) returns (MLFeedResponseV1) {}
   rpc get_ml_feed_clean(MLFeedRequest) returns (MLFeedResponse) {}
   rpc get_ml_feed_nsfw(MLFeedRequest) returns (MLFeedResponse) {}
+  rpc report_video(VideoReportRequest) returns (VideoReportResponse) {}
 }
