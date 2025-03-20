@@ -47,5 +47,8 @@ service MLFeed {
   rpc get_feed_clean(FeedRequest) returns (FeedResponse) {}
   rpc get_feed_nsfw(FeedRequest) returns (FeedResponse) {}
   rpc get_feed_coldstart(FeedRequest) returns (FeedResponse) {}
+  rpc get_feed_global_cache(FeedRequest) returns (FeedResponse) {}
+  rpc get_feed_global_nsfw(FeedRequest) returns (FeedResponse) {}
+  rpc get_feed_global_mixed(FeedRequest) returns (FeedResponse) {}
   rpc report_video(VideoReportRequest) returns (VideoReportResponse) {}
 }
