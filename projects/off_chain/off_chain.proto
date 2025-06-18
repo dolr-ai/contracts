@@ -6,8 +6,7 @@ package off_chain;
 service OffChain {
 
   rpc ReportPost(ReportPostRequest) returns (Empty) {}
-
-  rpc BindDeviceToPrincipal(BindDeviceToPrincipalRequest) returns (Empty) {}
+  
 }
 
 message ReportPostRequest {
@@ -18,11 +17,6 @@ message ReportPostRequest {
   string video_id = 5;
   string reason = 6;
   string video_url = 7;
-}
-
-message BindDeviceToPrincipalRequest {
-  string device_id = 1;
-  string principal_id = 2;
 }
 
 message Empty {}
