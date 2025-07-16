@@ -37,9 +37,15 @@ message VideoReportRequest {
   string reason = 6;
 }
 
-message VideoReportResponse {
-  bool success = 1;
+message VideoReportResponse { bool success = 1; }
+
+message VideoReportRequestV3 {
+  string reportee_user_id = 1;
+  string video_id = 2;
+  string reason = 3;
 }
+
+message VideoReportResponseV3 { bool success = 1; }
 
 service MLFeed {
   rpc get_feed(FeedRequest) returns (FeedResponse) {}
@@ -51,4 +57,5 @@ service MLFeed {
   rpc get_feed_global_nsfw(FeedRequest) returns (FeedResponse) {}
   rpc get_feed_global_mixed(FeedRequest) returns (FeedResponse) {}
   rpc report_video(VideoReportRequest) returns (VideoReportResponse) {}
+  rpc report_video_v3(VideoReportRequestV3) returns (VideoReportResponseV3) {}
 }
